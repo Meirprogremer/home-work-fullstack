@@ -1,0 +1,134 @@
+/* --- עיצוב כללי --- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+    background-color: #fdfbf7;
+    color: #2d3748;
+}
+
+.main-content { padding: 20px 8%; }
+.task-container { margin-bottom: 80px; }
+.section-title { text-align: center; margin-bottom: 30px; font-size: 1.8rem; color: #a3b18a; }
+.task-divider { border: 0; border-top: 1px solid #e2e8f0; margin: 50px 0; }
+
+/* --- משימה 1: Sticky Navigation Bar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Box Shadow */
+    position: sticky; /* Sticky */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; color: #a3b18a; }
+
+.nav-links { display: flex; gap: 20px; }
+
+.nav-btn {
+    text-decoration: none;
+    color: #4a5568;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Transitions */
+}
+
+/* Hover Animation */
+.nav-btn:hover {
+    background-color: #f7fafc;
+    color: #a3b18a;
+    transform: translateY(-3px); /* Move Up */
+}
+
+.contact-btn { background-color: #a3b18a; color: white !important; }
+
+/* --- אתר חיים דביר - סקשן אודות --- */
+.about-section { padding: 60px 0; }
+.about-container { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+.about-image img { width: 100%; max-width: 400px; border-radius: 15px; box-shadow: 10px 10px 0px #a3b18a; }
+.about-content { flex: 1; min-width: 300px; }
+.credentials { display: block; color: #a3b18a; font-weight: bold; margin-bottom: 15px; }
+.specialties { list-style: none; padding: 0; }
+.specialties li::before { content: "✓ "; color: #a3b18a; font-weight: bold; }
+
+/* --- משימה 2: Flexbox Product Gallery --- */
+.product-flex-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap */
+    gap: 20px;
+}
+
+.product-card {
+    background: white;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    text-align: center;
+    flex-grow: 1;    /* Grow */
+    flex-shrink: 1;  /* Shrink */
+    flex-basis: 250px; /* Basis */
+}
+
+.placeholder { height: 120px; background: #f0f4f8; margin-top: 10px; border-radius: 5px; }
+
+/* --- משימה 3: Interactive Leaderboard Table --- */
+.table-card-wrapper {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Distinct Box Shadow */
+    overflow: hidden;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse Borders */
+}
+
+.leaderboard-table th, .leaderboard-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.leaderboard-table thead { background-color: #34495e; color: white; }
+
+/* Hover Interaction */
+.leaderboard-table tbody tr { transition: background 0.3s; }
+.leaderboard-table tbody tr:hover {
+    background-color: #f1f5f1; /* Light highlight */
+    cursor: pointer;
+}
+
+/* --- משימה 4: Dashboard Widget Grid --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Columns */
+    grid-template-rows: repeat(2, 120px);  /* 2 Rows */
+    gap: 15px;
+}
+
+.widget {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+/* הסעיף הספציפי של מרכוז גריד */
+.center-item {
+    display: grid;
+    place-items: center; /* Perfectly Center */
+    background-color: #edf2f7;
+    font-weight: bold;
+}
+
+/* התאמה למובייל */
+@media (max-width: 768px) {
+    .dashboard-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .navbar { flex-direction: column; gap: 10px; }
+}
